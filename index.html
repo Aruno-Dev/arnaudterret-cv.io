@@ -220,8 +220,8 @@
                 <h2 class="title2">Intérets</h2>
                 <ul>
                     <li><a href="https://www.nippon.com/fr/features/c03702/" target="_blank"><i class="fas fa-camera"></i>Photographie</a></li>
-                    <li><a id="musics" href="#"target="_blank" onclick="changeHref('musics')"><i class="fas fa-book"></i>Musique</a></li>
-                    <li><a id="books" href="#" target="_blank" onclick="changeHref('books')"><i class="fas fa-book"></i>Lecture</a></li>
+                    <li><a id="musics" href="#"target="_blank" ><i class="fas fa-book"></i>Musique</a></li>
+                    <li><a id="books" href="#" target="_blank" ><i class="fas fa-book"></i>Lecture</a></li>
                     <li><a href="https://www.marmiton.org/recettes/recette_quiche-lorraine_30283.aspx" target="_blank"><i class="fas fa-utensils"></i>Gastronomie</a></li>
                 </ul>
             </div>
@@ -241,7 +241,7 @@
             img.style.opacity = '0';
         }
 
-        //Music scripts
+        //Musics scripts
         const musics = [
             'https://youtu.be/LFWJ0Beof74', 
             'https://youtu.be/RuhUlVrei5E', 
@@ -262,9 +262,14 @@
             'https://youtu.be/7Op1WDZk850'
         ];
 
+        const musicsLink = document.getElementById('musics');
         const musicsMaxIndex = musics.length - 1;
 
-        // Books scripts
+        musicsLink.onclick = function () {
+            musicsLink.href = Randomize(0, musicsMaxIndex, musics);
+        }
+
+        //Books scripts
         const books = [
             'https://fr.wikipedia.org/wiki/Ilium_(roman)',
             'https://fr.wikipedia.org/wiki/Olympos_(roman)',
@@ -274,19 +279,18 @@
             'https://fr.wikipedia.org/wiki/Cycle_d%27Elric',
             'https://fr.wikipedia.org/wiki/Cycle_de_Fondation'
         ]
+
+        const booksLink = document.getElementById('books');
         const booksMaxIndex = books.length - 1;
 
+        booksLink.onclick = function () {
+            booksLink.href = Randomize(0, booksMaxIndex, books);
+        }
         //Functions
         function Randomize(min, max, array){
             return array[Math.floor(Math.random() * (max - min + 1)) + min];
         }
-        function changeHref(topic){
-            if(topic ==='musics'){
-                document.getElementById(topic).href=Randomize(0, musicsMaxIndex, musics)
-            } else {
-                document.getElementById(topic).href=Randomize(0, booksMaxIndex, books)
-            }
-        }
+
 
   
     </script>
