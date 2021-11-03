@@ -220,7 +220,7 @@
                 <h2 class="title2">Intérets</h2>
                 <ul>
                     <li><a href="https://www.nippon.com/fr/features/c03702/" target="_blank"><i class="fas fa-camera"></i>Photographie</a></li>
-                    <li><a id="musics" href="#"target="_blank" ><i class="fas fa-book"></i>Musique</a></li>
+                    <li><a id="musics" href="#"target="_blank" ><i class="fas fa-record-vinyl"></i>Musique</a></li>
                     <li><a id="books" href="#" target="_blank" ><i class="fas fa-book"></i>Lecture</a></li>
                     <li><a href="https://www.marmiton.org/recettes/recette_quiche-lorraine_30283.aspx" target="_blank"><i class="fas fa-utensils"></i>Gastronomie</a></li>
                 </ul>
@@ -270,6 +270,12 @@
         musicsLink.onclick = function () {
             musicsLink.href = Randomize(0, musicsMaxIndex, musics);
         }
+        musicsLink.onmouseover = function () {
+            musicsLink.innerHTML = "<i class=\"fas fa-record-vinyl\"></i>Aléatoire";
+        }
+        musicsLink.onmouseout = function () {
+            musicsLink.innerHTML = "<i class=\"fas fa-record-vinyl\"></i>Musique";
+        }
 
         //Books scripts
         const books = [
@@ -287,6 +293,12 @@
 
         booksLink.onclick = function () {
             booksLink.href = Randomize(0, booksMaxIndex, books);
+        }
+        booksLink.onmouseover = function () {
+            booksLink.innerHTML = "<i class=\"fas fa-book\"></i>Aléatoire";
+        }
+        booksLink.onmouseout = function () {
+            booksLink.innerHTML = "<i class=\"fas fa-book\"></i>Lecture";
         }
         //Functions
         function Randomize(min, max, array){
