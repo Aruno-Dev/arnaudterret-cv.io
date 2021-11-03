@@ -416,6 +416,9 @@ body {
   text-decoration: none;
   color: #fff;
   cursor: pointer;
+  transition:0.5s;
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;
 }
 .interest ul li a:hover {
   color: rgb(61, 90, 254);
